@@ -1,0 +1,54 @@
+/* Sidebar from https://www.youtube.com/watch?v=YesSVqjcDts */
+
+#sidebar {
+  width: 0px;
+  height: 100%;
+  background: black;
+  padding: 70px 0px;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* overflow: scroll; */
+}
+
+#sidebar.is-active {
+  width: 250px;
+}
+
+#sidebar ul {
+  padding: 0;
+  white-space: nowrap;
+}
+
+#sidebar ul li {
+  list-style-type: none;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+#sidebar ul li a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: letter-spacing 0.2s;
+}
+
+#sidebar ul li a .fas {
+  width: 25px;
+}
+
+#sidebar ul li:hover {
+  letter-spacing: 3px;
+}
+
+#sidebar .social_media {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}

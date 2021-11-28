@@ -1,0 +1,105 @@
+html,
+body {
+  font-family: "Avenir Next";
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+#navbar {
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px 0 10px;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+#join-discord-container {
+  text-transform: uppercase;
+  transition: letter-spacing 0.2s;
+  font-weight: bold;
+  background-color: black;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+#join-discord-container:hover {
+  letter-spacing: 2px;
+}
+
+#join-discord {
+  text-decoration: none;
+  color: white;
+}
+
+#overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+#overlay.is-active {
+  opacity: 0.5;
+}
+
+.page {
+  width: 100%;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 200px 0 200px 0;
+}
+
+.social_media a {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #f3efe0;
+  transition: all 0.2s ease-in-out;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.social_media img {
+  width: 30px;
+  height: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.social_media a:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+#footer {
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#footer .social_media {
+  display: flex;
+}
