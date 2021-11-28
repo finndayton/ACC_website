@@ -1,85 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <title>ACC website</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>ACC website</title>
+</head>
 
+<body>
+  <div id="navbar">
+    <div class="logo">
+      <a href="#home"><img style="width: 15rem;" src="images/logo.png"></a>
+    </div>
 
-  <body> 
-    <div id="topbar">
-      <div class="logo">
-        <a href="#home">
-          <img style="max-width: 100%; max-height: 100%;" src="images/acc logo.png">
-        </a>
-      </div>
-
-      <div id="Join Discord Button">
-        <a href="https://www.discord.com"class="fab fa-join discord"></a>
+    <div id="navbar-right">
+      <div id="join-discord-container">
+        <a href="https://www.discord.com" id="join-discord">join discord</a>
       </div>
 
       <button class="hamburger hamburger--spin" type="button">
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
-      </button> 
+      </button>
+    </div>
+  </div>
 
-      <div id="sidebar">
-        <ul>
-          <li><a href="#home"><i class="fas fa-home"></i>Home</a></li>
-          <li><a href="#art"><i class="fas fa-address-card"></i>Art</a></li>
-          <li><a href="#about"><i class="fas fa-university"></i>About</a></li>
-          <li><a href="#collections"><i class="fas fa-cogs"></i>Collections</a></li>
-          <li><a href="#team"><i class="fas fa-briefcase"></i>Team</a></li>
-          <li><a href="#FAQs"><i class="fas fa-share-alt"></i>FAQs</a></li>
-        </ul>
-        <div class="social_media">
-          <a href="https://www.discord.com" target="_blank"><i class="fab fa-discord"></i></a>
-          <a href="https://www.twitter.com" target="_blank"><i
-              class="fab fa-twitter"></i></a>
-          <a href="https://www.opensea.com" target="_blank"><i class="fab fa-opensea"></i></a>
-        </div>
-      </div>
+  <div id="sidebar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#art">Art</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#FAQs">FAQs</a></li>
+    </ul>
+    <div class="social_media">
+      <a href="https://www.discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.opensea.com" target="_blank"><img src="images/opensea-logo.png"></a>
+    </div>
+  </div>
+
+  <div id="overlay"></div>
+
+  <div id="main">
+    <div class="page" id="home">
+      <h1 class="home-message">Own the colors of Monet, Van Gogh and Da Vinci</h1>
+      <h2 id="countdown-title">Countdown to minting:</h2>
+      <button></button>
+      <p id="countdown"></p>
     </div>
 
-    <div id="main">
-      <div class="page" id="home">
-        <h1 class="home-message">Own the colors of Monet, Van Gogh and De Vinci</h1>
-        <h2 id="countdown">Countdown to minting:</h2>
-      </div>
-
-      <div class="page" id="art">
-        <img src="images/gallery.jpg" alt="">
-      </div>
-
-
-
-      <div class="page" id="collections">
-      </div>
-
-
-      <div class="page" id="about">
-      </div>
-
-      <div class="page" id="team">
-      </div>
-
-      <div class="page" id="FAQs">
-      </div>
-
-      <div id="footer">
-        <p style="margin:0">Designed and made by me</p>
-        <p style="margin:0">Last updated on March 2021</p>
-      </div>
-
+    <div class="page" id="art">
+      <!-- <img src="images/gallery.jpg" alt=""> -->
     </div>
-  </body>
 
+
+
+    <div class="page" id="collections">
+    </div>
+
+
+    <div class="page" id="about">
+    </div>
+
+    <div class="page" id="team">
+    </div>
+
+    <div class="page" id="FAQs">
+    </div>
+
+    <div id="footer">
+      <img style="height: 65px;" src="images/logo.png">
+      <p style="margin:0">all rights reserved</p>
+      <a href="" style="margin:0">terms and conditions</a>
+      <p>discord</p>
+      <p>twitter</p>
+      <p>pumpkin</p>
+    </div>
+
+  </div>
+
+  <script>
+    var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        days + ":" +
+        String(hours).padStart(2, '0') + ":" +
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+
+      // If the count down is finished, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init()
+    var hamburger = document.querySelector(".hamburger");
+    var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("overlay");
+    // var landing_text = document.getElementById("landing-text");
+    hamburger.addEventListener("click", function () {
+      hamburger.classList.toggle("is-active");
+      sidebar.classList.toggle("is-active");
+      overlay.classList.toggle("is-active");
+      // landing_text.classList.toggle("is-active");
+    });
+  </script>
+</body>
+
+</html>
