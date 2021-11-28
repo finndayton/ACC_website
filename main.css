@@ -51,7 +51,7 @@ body {
   left: 0;
   background-color: black;
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: all 0.5s ease-in-out;
 }
 
 #overlay.is-active {
@@ -60,12 +60,12 @@ body {
 
 .page {
   width: 100%;
-  min-height: 100vh;
   font-weight: normal;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 200px 0 200px 0;
 }
 
 /* Hamburger CSS from https://jonsuh.com/hamburgers/#usage */
@@ -249,7 +249,7 @@ body {
   display: flex;
 }
 
-#sidebar .social_media a {
+.social_media a {
   display: flex;
   width: 40px;
   height: 40px;
@@ -263,26 +263,29 @@ body {
   text-decoration: none;
 }
 
-#sidebar .social_media img {
+.social_media img {
   width: 30px;
   height: 30px;
   transition: all 0.2s ease-in-out;
 }
 
-#sidebar .social_media a:hover {
+.social_media a:hover {
   transform: scale(1.1);
 }
 
 /* Home */
 
 #home {
+  min-height: 100vh;
   background-color: #800000;
+  margin: 0;
 }
 
 #countdown-container {
   border: 1px solid black;
   padding: 0 10px 0 10px;
   border-radius: 10px;
+  z-index: 50;
 }
 
 #buy-nft {
@@ -341,11 +344,12 @@ body {
   border-bottom: 1px solid #fff;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  -webkit-animation: sdb04 2s infinite;
-  animation: sdb04 2s infinite;
+  -webkit-animation: scroll-indicator 2s infinite;
+  animation: scroll-indicator 2s infinite;
   box-sizing: border-box;
+  z-index: 50;
 }
-@-webkit-keyframes sdb04 {
+@-webkit-keyframes scroll-indicator {
   0% {
     -webkit-transform: rotate(-45deg) translate(0, 0);
   }
@@ -356,7 +360,7 @@ body {
     -webkit-transform: rotate(-45deg) translate(0, 0);
   }
 }
-@keyframes sdb04 {
+@keyframes scroll-indicator {
   0% {
     transform: rotate(-45deg) translate(0, 0);
   }
@@ -366,4 +370,16 @@ body {
   40% {
     transform: rotate(-45deg) translate(0, 0);
   }
+}
+
+/* Footer */
+#footer {
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#footer .social_media {
+  display: flex;
 }
