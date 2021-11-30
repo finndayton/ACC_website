@@ -20,6 +20,14 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+#navbar #logo {
+  z-index: 100;
+}
+
+#navbar #logo-img {
+  width: 15rem;
+}
+
 #navbar-right {
   display: flex;
   align-items: center;

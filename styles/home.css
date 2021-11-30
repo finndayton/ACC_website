@@ -6,80 +6,155 @@
   min-height: 100vh;
   margin: 0;
 
-	/* W3C */
-	background: linear-gradient(top, #ff3232 0%,#fcf528 16%,#28fc28 32%,#28fcf8 50%,#272ef9 66%,#ff28fb 82%,#ff3232 100%);
+  /* W3C */
+  background: linear-gradient(
+    top,
+    #ff3232 0%,
+    #fcf528 16%,
+    #28fc28 32%,
+    #28fcf8 50%,
+    #272ef9 66%,
+    #ff28fb 82%,
+    #ff3232 100%
+  );
 
-	/* Firefox */
-	background: -moz-linear-gradient(top, #ff3232 0%, #fcf528 16%, #28fc28 32%, #28fcf8 50%, #272ef9 66%, #ff28fb 82%, #ff3232 100%);
+  /* Firefox */
+  background: -moz-linear-gradient(
+    top,
+    #ff3232 0%,
+    #fcf528 16%,
+    #28fc28 32%,
+    #28fcf8 50%,
+    #272ef9 66%,
+    #ff28fb 82%,
+    #ff3232 100%
+  );
 
-	/* Chrome,Safari4+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3232), color-stop(16%,#fcf528), color-stop(32%,#28fc28), color-stop(50%,#28fcf8), color-stop(66%,#272ef9), color-stop(82%,#ff28fb), color-stop(100%,#ff3232));
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, #ff3232),
+    color-stop(16%, #fcf528),
+    color-stop(32%, #28fc28),
+    color-stop(50%, #28fcf8),
+    color-stop(66%, #272ef9),
+    color-stop(82%, #ff28fb),
+    color-stop(100%, #ff3232)
+  );
 
-	/* Chrome10+,Safari5.1+ */
-	background: -webkit-linear-gradient(top, #ff3232 0%,#fcf528 16%,#28fc28 32%,#28fcf8 50%,#272ef9 66%,#ff28fb 82%,#ff3232 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(
+    top,
+    #ff3232 0%,
+    #fcf528 16%,
+    #28fc28 32%,
+    #28fcf8 50%,
+    #272ef9 66%,
+    #ff28fb 82%,
+    #ff3232 100%
+  );
 
-	background-size: 1000%;
-	-moz-background-size: 1000%;
-	-webkit-background-size: 1000%;	
+  background-size: 1000%;
+  -moz-background-size: 1000%;
+  -webkit-background-size: 1000%;
 
-	/* W3C */
-	animation-name: fun-time-awesome;
-	animation-duration: 40s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-play-state: running;
+  /* W3C */
+  animation-name: fun-time-awesome;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
 
-	/* Firefox: */
-	-moz-animation-name: fun-time-awesome;
-	-moz-animation-duration: 40s;
-	-moz-animation-timing-function: linear;
-	-moz-animation-iteration-count: infinite;
-	-moz-animation-direction: alternate;
-	-moz-animation-play-state: running;
+  /* Firefox: */
+  -moz-animation-name: fun-time-awesome;
+  -moz-animation-duration: 40s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  -moz-animation-play-state: running;
 
-	/* Chrome, Safari */
-	-webkit-animation-name: fun-time-awesome;
-	-webkit-animation-duration: 40s;
-	-webkit-animation-timing-function: linear;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-direction: alternate;
-	-webkit-animation-play-state: running;
+  /* Chrome, Safari */
+  -webkit-animation-name: fun-time-awesome;
+  -webkit-animation-duration: 40s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
 }
 
 /* W3C */
 @keyframes fun-time-awesome {
-	0% {background-position: left top;}
-	100% {background-position: left bottom;}
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: left bottom;
+  }
 }
 
 /* Firefox */
 @-moz-keyframes fun-time-awesome {
-	0% {background-position: left top;}
-	100% {background-position: left bottom;}
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: left bottom;
+  }
 }
 
 /* Chrome, Safari */
 @-webkit-keyframes fun-time-awesome {
-	0% {background-position: left top;}
-	100% {background-position: left bottom;}
+  0% {
+    background-position: left top;
+  }
+  100% {
+    background-position: left bottom;
+  }
+}
+
+#hero {
+  width: 80%;
+}
+
+#home-message {
+  text-align: center;
+}
+
+#countdown-title {
+  text-align: center;
+}
+
+#countdown-container {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
 }
 
 #countdown-container.is-active {
-  border: 1px solid black;
   padding: 0 10px 0 10px;
   border-radius: 10px;
-  z-index: 50;
+  z-index: 1;
+}
+
+#countdown {
+  font-weight: bold;
+  color: white;
+  font-size: large;
 }
 
 #buy-nft {
   position: absolute;
   right: 50px;
   bottom: 100px;
-  background-color: blue;
+  background-color: black;
   padding: 10px;
   border-radius: 5px;
-  z-index: 2;
+  z-index: 1;
   transition: all 0.2s ease-in-out;
 }
 
@@ -92,6 +167,11 @@
   text-transform: uppercase;
   color: white;
   font-weight: bold;
+  transition: letter-spacing 0.2s;
+}
+
+#buy-nft a:hover {
+  letter-spacing: 3px;
 }
 
 /* Scroll arrow animation from https://codepen.io/nxworld/pen/OyRrGy */
@@ -131,7 +211,7 @@
   -webkit-animation: scroll-indicator 2s infinite;
   animation: scroll-indicator 2s infinite;
   box-sizing: border-box;
-  z-index: 50;
+  z-index: 80;
 }
 @-webkit-keyframes scroll-indicator {
   0% {

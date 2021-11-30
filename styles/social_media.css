@@ -7,14 +7,14 @@
   padding: 70px 0px;
   position: fixed;
   right: 0;
-  z-index: 1;
+  z-index: 90;
   overflow-x: hidden;
-  transition: 0.5s;
-  /* overflow: scroll; */
+  transition: 0.2s;
 }
 
 #sidebar.is-active {
-  width: 250px;
+  /* width: 400px; */
+  width: 100%;
 }
 
 #sidebar ul {
@@ -52,3 +52,5 @@
   transform: translateX(-50%);
   display: flex;
 }
+
+/* TODO: sidebar takes up full screen, but only 400px at min 750px window width */
