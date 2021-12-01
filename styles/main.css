@@ -71,6 +71,7 @@ body {
 }
 
 .page {
+  margin: auto;
   width: 100%;
   font-weight: normal;
   display: flex;
