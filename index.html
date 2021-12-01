@@ -38,12 +38,12 @@
 
   <div id="sidebar">
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#art">Art</a></li>
-      <li><a href="#collections">Collections</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#FAQs">FAQs</a></li>
+      <li><a class="sidebar-item" href="#home">Home</a></li>
+      <li><a class="sidebar-item" href="#art">Art</a></li>
+      <li><a class="sidebar-item" href="#collections">Collections</a></li>
+      <li><a class="sidebar-item" href="#about">About</a></li>
+      <li><a class="sidebar-item" href="#team">Team</a></li>
+      <li><a class="sidebar-item" href="#FAQs">FAQs</a></li>
     </ul>
     <div class="social_media">
       <a href="https://www.discord.com" target="_blank"><i class="fab fa-discord"></i></a>
@@ -123,7 +123,6 @@
         </div>
       </div>
 
-      <!-- item 1 -->
       <div class="collection">
         <div class="collection-item">
           <img src="images/collections1.jpeg">
@@ -362,6 +361,19 @@
       overlay.classList.toggle("is-active");
     });
   </script>
+  <script>
+    var items = document.getElementsByClassName("sidebar-item");
+    var hamburger = document.querySelector(".hamburger");
+    var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("overlay");
+    for (var i = 0; i < items.length; i++) {
+      items[i].addEventListener("click", function () {
+        hamburger.classList.toggle("is-active");
+        sidebar.classList.toggle("is-active");
+        overlay.classList.toggle("is-active");
+      });
+    }
+  </script>
 
   <!-- Typewriter -->
   <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter -->
@@ -387,7 +399,6 @@
     const number_of_cards_by_index = images.children.length - 1,
       middle_card_by_index = Math.floor(number_of_cards_by_index / 2);
 
-    console.log(`number_of_cards_by_index: ${number_of_cards_by_index}`);
 
     /* 90% screen width and 5 cards per */
     const card_width = 90 / (images.children.length - 1);
@@ -411,7 +422,6 @@
           images.children[i].style.left = `50%`;
         }
 
-        console.log(`child ${i}: ${images.children[i].style.left}`);
       }
     }
     order_cards();
@@ -446,7 +456,6 @@
     }
 
     document.querySelector('#right').addEventListener('click', () => {
-      console.log(`right button clicked`);
       if (scroll_in_progress) return;
       scroll_in_progress = true;
 
@@ -455,16 +464,11 @@
         images.children[i].style.transitionDuration = '0.5s';
         images.children[i].style.left = `${updated_position}%`;
         last_positions[i] = updated_position;
-        console.log(`child ${i}: ${images.children[i].style.left}`);
       }
 
-      console.log(`last_positions: ${last_positions}`);
-      console.log(`handle_boundaries`);
       handle_boundaries();
-      console.log(`last_positions: ${last_positions}`);
 
       for (let i = 0; i < images.children.length; i++) {
-        console.log(`child ${i}: ${images.children[i].style.left}`);
       }
 
       setTimeout(() => {
@@ -473,7 +477,6 @@
     });
 
     document.querySelector('#left').addEventListener('click', () => {
-      console.log(`left button clicked`);
       if (scroll_in_progress) return;
       scroll_in_progress = true;
 
@@ -482,16 +485,11 @@
         images.children[i].style.transitionDuration = '0.5s';
         images.children[i].style.left = `${updated_position}%`;
         last_positions[i] = updated_position;
-        console.log(`child ${i}: ${images.children[i].style.left}`);
       }
 
-      console.log(`last_positions: ${last_positions}`);
-      console.log(`handle_boundaries`);
       handle_boundaries();
-      console.log(`last_positions: ${last_positions}`);
 
       for (let i = 0; i < images.children.length; i++) {
-        console.log(`child ${i}: ${images.children[i].style.left}`);
       }
 
       setTimeout(() => {
