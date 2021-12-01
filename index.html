@@ -107,6 +107,10 @@
       <a><span id="right"></span></a>
     </div>
 
+    <button onclick="typeWriter()">Click me</button>
+
+    <p id="demo"></p>
+
     <div class="page" id="collections">
       <h1>collections</h1>
 
@@ -126,11 +130,16 @@
           <p>The Kiss</p>
         </div>
         <div class="collection-colors">
-          <div class="collection-color" style="background-color: #442288;"></div>
-          <div class="collection-color" style="background-color: #6CA2EA;"></div>
-          <div class="collection-color" style="background-color: #B5D33D;"></div>
+          <div class="collection-color" style="background-color: #927d39;"></div>
+          <div class="collection-color" style="background-color: #cfaf4a;"></div>
+          <div class="collection-color" style="background-color: #9b936f;"></div>
           <div class="collection-color" style="background-color: #FED23F;"></div>
-          <div class="collection-color" style="background-color: #EB7D5B;"></div>
+          <div class="collection-color" style="background-color: #342b15;"></div>
+          <div class="collection-color" style="background-color: #b4a893;"></div>
+          <div class="collection-color" style="background-color: #b2b76a;"></div>
+          <div class="collection-color" style="background-color: #5d5d2a;"></div>
+          <div class="collection-color" style="background-color: #70521c;"></div>
+          <div class="collection-color" style="background-color: #533113;"></div>
         </div>
       </div>
 
@@ -140,11 +149,15 @@
           <p>Starry Night</p>
         </div>
         <div class="collection-colors">
-          <div class="collection-color" style="background-color: #442288;"></div>
-          <div class="collection-color" style="background-color: #6CA2EA;"></div>
-          <div class="collection-color" style="background-color: #B5D33D;"></div>
-          <div class="collection-color" style="background-color: #FED23F;"></div>
-          <div class="collection-color" style="background-color: #EB7D5B;"></div>
+          <div class="collection-color" style="background-color: #496690;"></div>
+          <div class="collection-color" style="background-color: #b6b98a;"></div>
+          <div class="collection-color" style="background-color: #1d211f;"></div>
+          <div class="collection-color" style="background-color: #94b0ab;"></div>
+          <div class="collection-color" style="background-color: #182457;"></div>
+          <div class="collection-color" style="background-color: #869893;"></div>
+          <div class="collection-color" style="background-color: #3a474c;"></div>
+          <div class="collection-color" style="background-color: #7293c8;"></div>
+          <div class="collection-color" style="background-color: #193b75;"></div>
         </div>
       </div>
 
@@ -154,11 +167,15 @@
           <p>Nighthawks</p>
         </div>
         <div class="collection-colors">
-          <div class="collection-color" style="background-color: #442288;"></div>
-          <div class="collection-color" style="background-color: #6CA2EA;"></div>
-          <div class="collection-color" style="background-color: #B5D33D;"></div>
-          <div class="collection-color" style="background-color: #FED23F;"></div>
-          <div class="collection-color" style="background-color: #EB7D5B;"></div>
+          <div class="collection-color" style="background-color: #1f2b27;"></div>
+          <div class="collection-color" style="background-color: #d4ca6e;"></div>
+          <div class="collection-color" style="background-color: #4d8568;"></div>
+          <div class="collection-color" style="background-color: #699e75;"></div>
+          <div class="collection-color" style="background-color: #704c31;"></div>
+          <div class="collection-color" style="background-color: #4e2d1f;"></div>
+          <div class="collection-color" style="background-color: #ad5d1c;"></div>
+          <div class="collection-color" style="background-color: #3c5955;"></div>
+          <div class="collection-color" style="background-color: #699085;"></div>
         </div>
       </div>
     </div>
@@ -345,6 +362,23 @@
       overlay.classList.toggle("is-active");
     });
   </script>
+
+  <!-- Typewriter -->
+  <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter -->
+  <script>
+    var i = 0;
+    var txt = 'Lorem ipsum dummy text blabla.';
+    var speed = 50;
+
+    function typeWriter() {
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+  </script>
+
   <!-- Image carousel -->
   <!-- https://www.youtube.com/watch?v=wqfptgArbQg&t=0s -->
   <script>
