@@ -4,16 +4,21 @@
   position: relative;
   display: flex;
   justify-content: center;
+  background-image: url("../images/gallery.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #art #art-gallery {
   /* position: absolute; */
+  width: 100%;
   z-index: -1;
 }
 
 #art #art-carousel {
   position: absolute;
-  top: 15%;
+  top: 20%;
   display: flex;
   justify-content: space-between;
   width: 95%;

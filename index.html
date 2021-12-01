@@ -76,27 +76,31 @@
 
     <!-- Art -->
     <div id="art">
-      <img id="art-gallery" src="images/gallery.jpg" style="width: 100%">
+      <img id="art-gallery" src="images/gallery.jpg">
       <div id="art-carousel">
         <div class="gallery-painting-container">
-          <img class="gallery-frame" src="images/gallery-frame.jpg" style="width: 100%">
+          <img class="gallery-frame" src="images/gallery-frame.jpg">
           <div class="gallery-painting" style="background-color: #107763;"></div>
         </div>
         <div class="gallery-painting-container">
-          <img class="gallery-frame" src="images/gallery-frame.jpg" style="width: 100%">
+          <img class="gallery-frame" src="images/gallery-frame.jpg">
           <div class="gallery-painting" style="background-color: #ca6710;"></div>
         </div>
         <div class="gallery-painting-container">
-          <img class="gallery-frame" src="images/gallery-frame.jpg" style="width: 100%">
+          <img class="gallery-frame" src="images/gallery-frame.jpg">
           <div class="gallery-painting" style="background-color: #b51516;"></div>
         </div>
         <div class="gallery-painting-container">
-          <img class="gallery-frame" src="images/gallery-frame.jpg" style="width: 100%">
+          <img class="gallery-frame" src="images/gallery-frame.jpg">
           <div class="gallery-painting" style="background-color: #0c0c32;"></div>
         </div>
         <div class="gallery-painting-container">
-          <img class="gallery-frame" src="images/gallery-frame.jpg" style="width: 100%">
+          <img class="gallery-frame" src="images/gallery-frame.jpg">
           <div class="gallery-painting" style="background-color: #9cbbd7;"></div>
+        </div>
+        <div class="gallery-painting-container">
+          <img class="gallery-frame" src="images/gallery-frame.jpg">
+          <div class="gallery-painting" style="background-color: #588;"></div>
         </div>
       </div>
       <a><span id="left"></span></a>
@@ -351,6 +355,7 @@
 
     console.log(`number_of_cards_by_index: ${number_of_cards_by_index}`);
 
+    /* 90% screen width and 5 cards per */
     const card_width = 90 / (images.children.length - 1);
 
     function order_cards() {
@@ -359,7 +364,7 @@
 
 
       for (let i = 0; i < images.children.length; i++) {
-        images.children[i].style.transitionDuration = '3.0s';
+        images.children[i].style.transitionDuration = '1s';
         images.children[i].style.left = `${i * card_width}%`;
 
         if (i < middle_card_by_index) {
@@ -383,19 +388,19 @@
     function handle_boundaries() {
       if (last_positions[number_of_cards_by_index] >= 100) {
         const beginning_of_deck = last_positions[0];
-        images.children[number_of_cards_by_index].style.left = `${beginning_of_deck}%`;
-        last_positions[number_of_cards_by_index] = beginning_of_deck;
+        images.children[number_of_cards_by_index].style.left = `${beginning_of_deck - card_width}%`;
+        last_positions[number_of_cards_by_index] = beginning_of_deck - card_width;
 
         images.insertBefore(images.children[number_of_cards_by_index], images.children[0]);
         last_positions.splice(0, 0, last_positions.pop());
       }
       if (last_positions[0] <= -10) {
         const end_of_deck = last_positions[number_of_cards_by_index];
-        images.children[0].style.left = `${end_of_deck}%`;
-        last_positions[0] = end_of_deck;
+        images.children[0].style.left = `${end_of_deck + card_width}%`;
+        last_positions[0] = end_of_deck + card_width;
 
-        images.insertBefore(images.children[0], images.children[number_of_cards_by_index]);
-        last_positions.splice(number_of_cards_by_index, 0, last_positions.pop());
+        images.append(images.children[0]);
+        last_positions.splice(number_of_cards_by_index, 0, last_positions.shift());
       }
     }
 
@@ -416,9 +421,17 @@
         images.children[i].style.transitionDuration = '0.5s';
         images.children[i].style.left = `${updated_position}%`;
         last_positions[i] = updated_position;
+        console.log(`child ${i}: ${images.children[i].style.left}`);
       }
 
+      console.log(`last_positions: ${last_positions}`);
+      console.log(`handle_boundaries`);
       handle_boundaries();
+      console.log(`last_positions: ${last_positions}`);
+
+      for (let i = 0; i < images.children.length; i++) {
+        console.log(`child ${i}: ${images.children[i].style.left}`);
+      }
 
       setTimeout(() => {
         scroll_in_progress = false;
@@ -435,9 +448,17 @@
         images.children[i].style.transitionDuration = '0.5s';
         images.children[i].style.left = `${updated_position}%`;
         last_positions[i] = updated_position;
+        console.log(`child ${i}: ${images.children[i].style.left}`);
       }
 
+      console.log(`last_positions: ${last_positions}`);
+      console.log(`handle_boundaries`);
       handle_boundaries();
+      console.log(`last_positions: ${last_positions}`);
+
+      for (let i = 0; i < images.children.length; i++) {
+        console.log(`child ${i}: ${images.children[i].style.left}`);
+      }
 
       setTimeout(() => {
         scroll_in_progress = false;
