@@ -1,0 +1,36 @@
+#collections {
+}
+
+.collection {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.collection-item img {
+  height: 200px;
+  width: auto;
+}
+
+.collection-colors {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.collection-color {
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+  margin: 10px;
+}
