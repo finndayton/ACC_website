@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/home.css">
   <link rel="stylesheet" href="styles/art.css">
+  <link rel="stylesheet" href="styles/team.css">
+  <link rel="stylesheet" href="styles/faq.css">
+  <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/hamburger.css">
   <link rel="stylesheet" href="styles/social_media.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
@@ -156,37 +159,37 @@
 
     <div class="page" id="team">
       <h1>Team</h1>
-      <div style="width: 80%; display: flex; justify-content: space-between;">
-        <div style="width: 20%; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <div style="height: 100px; width: 100px; background-color: gray;">image</div>
-          <h4>Name 1</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus velit maiores placeat nihil a cum,
-            quibusdam repellat illum molestiae illo ut quia ea quas debitis. Asperiores illum blanditiis repellendus
-            corporis?</p>
+      <div id="team-container">
+        <div class="team-member-container">
+          <div class="team-member-image">
+            <img src="images/team1.png">
+          </div>
+          <h3 class="team-member-name">@fat ape keyboard</h3>
+          <p class="team-member-title">Senior Programmer</p>
         </div>
 
-        <div style="width: 20%; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <div style="height: 100px; width: 100px; background-color: gray;">image</div>
-          <h4>Name 1</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus velit maiores placeat nihil a cum,
-            quibusdam repellat illum molestiae illo ut quia ea quas debitis. Asperiores illum blanditiis repellendus
-            corporis?</p>
+        <div class="team-member-container">
+          <div class="team-member-image">
+            <img src="images/team2.png">
+          </div>
+          <h3 class="team-member-name">@fat ape chief</h3>
+          <p class="team-member-title">Marketing Genius</p>
         </div>
 
-        <div style="width: 20%; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <div style="height: 100px; width: 100px; background-color: gray;">image</div>
-          <h4>Name 1</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus velit maiores placeat nihil a cum,
-            quibusdam repellat illum molestiae illo ut quia ea quas debitis. Asperiores illum blanditiis repellendus
-            corporis?</p>
+        <div class="team-member-container">
+          <div class="team-member-image">
+            <img src="images/team3.png">
+          </div>
+          <h3 class="team-member-name">@dj fat ape</h3>
+          <p class="team-member-title">Chief of Communications</p>
         </div>
 
-        <div style="width: 20%; display: flex; flex-direction: column; align-items: center; text-align: center;">
-          <div style="height: 100px; width: 100px; background-color: gray;">image</div>
-          <h4>Name 1</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus velit maiores placeat nihil a cum,
-            quibusdam repellat illum molestiae illo ut quia ea quas debitis. Asperiores illum blanditiis repellendus
-            corporis?</p>
+        <div class="team-member-container">
+          <div class="team-member-image">
+            <img src="images/team4.png">
+          </div>
+          <h3 class="team-member-name">@fat ape barista</h3>
+          <p class="team-member-title">Art Director</p>
         </div>
       </div>
 
@@ -195,82 +198,58 @@
     <div class="page" id="FAQs">
       <h1>FAQs</h1>
       <div style="width: 80%">
-        <div id="faq-card"
-          style="background-color: lightgray; padding: 20px; border-radius: 15px; margin-bottom: 50px;">
-          <p id="faq-question" style="font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Officia at eos rem excepturi,
-            vitae aut voluptate omnis libero eaque non fuga et voluptates nam soluta cumque aperiam quis molestiae
-            labore.
-          </p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae hic ducimus
-            est
-            rerum! Deserunt esse possimus beatae ab, non ducimus, cupiditate amet eaque illo praesentium perspiciatis
-            eos
-            blanditiis numquam.</p>
+        <div class="faq-card">
+          <p class="faq-question">How much is a Fat Ape NFT?</p>
+          <p class="faq-answer">The Public Sale starts on November 1st, 2021, at 9 PM EST. Price Starts at 0.3 ETH + gas
+            for 6 hours. If the collection is not sold out by then, price drops to 0.25 ETH + gas after the initial 6
+            hours. If the collection is still not sold out after those 12 hours, the rest of the Fat Apes are sold at
+            0.2 ETH + gas.</p>
         </div>
 
-        <div id="faq-card"
-          style="background-color: lightgray; padding: 20px; border-radius: 15px; margin-bottom: 50px;">
-          <p id="faq-question" style="font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Officia at eos rem excepturi,
-            vitae aut voluptate omnis libero eaque non fuga et voluptates nam soluta cumque aperiam quis molestiae
-            labore.
-          </p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae hic ducimus
-            est
-            rerum! Deserunt esse possimus beatae ab, non ducimus, cupiditate amet eaque illo praesentium perspiciatis
-            eos
-            blanditiis numquam.</p>
+        <div class="faq-card">
+          <p class="faq-question">Where can I view my Fat Ape NFTs?</p>
+          <p class="faq-answer">Once you have minted a Fat Ape NFT, you will be able to see it by connecting your crypto
+            wallet to OpenSea.</p>
         </div>
 
-        <div id="faq-card"
-          style="background-color: lightgray; padding: 20px; border-radius: 15px; margin-bottom: 50px;">
-          <p id="faq-question" style="font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Officia at eos rem excepturi,
-            vitae aut voluptate omnis libero eaque non fuga et voluptates nam soluta cumque aperiam quis molestiae
-            labore.
-          </p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae hic ducimus
-            est
-            rerum! Deserunt esse possimus beatae ab, non ducimus, cupiditate amet eaque illo praesentium perspiciatis
-            eos
-            blanditiis numquam.</p>
+        <div class="faq-card">
+          <p class="faq-question">Will there be a presale?</p>
+          <p class="faq-answer">Yes, we will be holding a presale 1 day prior to the public launch for our Whitelist
+            members. Please join our Discord to learn how you can join the Whitelist. The Whitelist spots will be very
+            limited.</p>
         </div>
 
-        <div id="faq-card"
-          style="background-color: lightgray; padding: 20px; border-radius: 15px; margin-bottom: 50px;">
-          <p id="faq-question" style="font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Officia at eos rem excepturi,
-            vitae aut voluptate omnis libero eaque non fuga et voluptates nam soluta cumque aperiam quis molestiae
-            labore.
-          </p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae hic ducimus
-            est
-            rerum! Deserunt esse possimus beatae ab, non ducimus, cupiditate amet eaque illo praesentium perspiciatis
-            eos
-            blanditiis numquam.</p>
+        <div class="faq-card">
+          <p class="faq-question">When will we be able to mint Fat Apes?</p>
+          <p class="faq-answer">The public launch will be held on November 1st, 2021, at 9 PM EST, while the presale
+            will be held October 31st at 4 PM EST</p>
         </div>
 
-        <div id="faq-card"
-          style="background-color: lightgray; padding: 20px; border-radius: 15px; margin-bottom: 50px;">
-          <p id="faq-question" style="font-weight: bold;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Officia at eos rem excepturi,
-            vitae aut voluptate omnis libero eaque non fuga et voluptates nam soluta cumque aperiam quis molestiae
-            labore.
-          </p>
-          <p class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis repudiandae hic ducimus
-            est
-            rerum! Deserunt esse possimus beatae ab, non ducimus, cupiditate amet eaque illo praesentium perspiciatis
-            eos
-            blanditiis numquam.</p>
+        <div class="faq-card">
+          <p class="faq-question">What can I do with my Fat Ape?</p>
+          <p class="faq-answer">You can use your Fat Ape as a profile picture online, and you can also resell your Fat
+            Apes for profit. Once breeding functions launch, you will be able to earn Fat Ape tokens daily. If you
+            accumulate enough, you will be able to burn these tokens to generate new, stronger apes.</p>
+        </div>
+
+        <div class="faq-card">
+          <p class="faq-question">Are there secondary sale royalties?</p>
+          <p class="faq-answer">Yes, 10% of the secondary sales will be deducted in royalties for the Fat Ape team. A
+            portion of those royalties will go towards marketing, to make sure that the project continues to grow.</p>
+        </div>
+
+        <div class="faq-card">
+          <p class="faq-question">Do I own the Fat Ape after minting it?</p>
+          <p class="faq-answer">Yes, you will own all intellectual properties to the Fat Ape, which means you can use it
+            to create and sell merch.</p>
         </div>
       </div>
     </div>
 
-    <div id="footer">
+    <div class="page" id="footer">
       <img style="height: 65px;" src="images/logo.png">
-      <p style="margin:0">all rights reserved</p>
-      <a href="" style="margin:0">terms and conditions</a>
+      <p id="rights">All Rights Reserved 2021</p>
+      <a href="" id="terms">Terms and Conditions</a>
       <div class="social_media">
         <a href="https://www.discord.com" target="_blank"><i class="fab fa-discord"></i></a>
         <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -424,6 +403,23 @@
 
     /* ********************************************************************* */
 
+  </script>
+
+  <!-- FAQs collapsibles -->
+  <script>
+    var faqs = document.getElementsByClassName("faq-question");
+    for (var i = 0; i < faqs.length; i++) {
+      faqs[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight) {
+          content.style.maxHeight = null;
+          // content.style.margin = "0";
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
   </script>
 </body>
 
