@@ -13,7 +13,6 @@
 }
 
 #sidebar.is-active {
-  /* width: 400px; */
   width: 100%;
 }
 
@@ -53,4 +52,8 @@
   display: flex;
 }
 
-/* TODO: sidebar takes up full screen, but only 400px at min 750px window width */
+@media (min-width: 750px) {
+  #sidebar.is-active {
+    width: 400px;
+  }
+}
