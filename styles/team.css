@@ -1,0 +1,45 @@
+#team {
+  align-self: center;
+}
+
+#team-container {
+  display: flex;
+  /* flex-flow: row wrap; */
+  /* flex-basis: 100%; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+}
+
+.team-member-container {
+  background-color: blue;
+  align-items: center;
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.team-member-image {
+  border-radius: 65px;
+  overflow: hidden;
+  border: 5px solid #58805a;
+}
+
+.team-member-name {
+  text-transform: uppercase;
+  font-weight:bolder;
+}
+
+.team-member-title {
+  font-weight: lighter;
+}
+
+@media (min-width: 900px) {
+  #team-member-container {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #team-member-container {
+    flex-basis: 25%;
+  }
+}
