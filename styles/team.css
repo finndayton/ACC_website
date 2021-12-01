@@ -4,23 +4,22 @@
 
 #team-container {
   display: flex;
-  /* flex-flow: row wrap; */
-  /* flex-basis: 100%; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
+  flex-flow: row wrap;
+  width: 100%;
 }
 
 .team-member-container {
-  background-color: blue;
   align-items: center;
   text-align: center;
   flex-basis: 100%;
 }
 
-.team-member-image {
-  border-radius: 65px;
-  overflow: hidden;
+.team-member-image img {
   border: 5px solid #58805a;
+  border-radius: 65px;
+  width: 90%;
+  overflow: hidden;
+  background-color: #58805a;
 }
 
 .team-member-name {
@@ -33,13 +32,15 @@
 }
 
 @media (min-width: 900px) {
-  #team-member-container {
+  .team-member-container {
     flex-basis: 50%;
+    max-width: 50%;
   }
 }
 
 @media (min-width: 1200px) {
-  #team-member-container {
+  .team-member-container {
     flex-basis: 25%;
+    max-width: 25%;
   }
 }
