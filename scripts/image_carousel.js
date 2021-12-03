@@ -5,29 +5,55 @@ const images = document.querySelector("#art-carousel");
 const number_of_cards_by_index = images.children.length - 1,
   middle_card_by_index = Math.floor(number_of_cards_by_index / 2);
 
-/* 90% screen width and 5 cards per */
-const card_width = 90 / (images.children.length - 1);
+var num_cards_on_screen = 2;
+if (window.innerWidth > 600) num_cards_on_screen = 3;
+if (window.innerWidth > 900) num_cards_on_screen = 4;
+if (window.innerWidth > 1200) num_cards_on_screen = 5;
 
-function order_cards() {
-  let counter_for_right = 1,
-    counter_for_left = middle_card_by_index;
+const card_width = (window.innerWidth - 60) / num_cards_on_screen;
+console.log(`window.innerWidth: ${window.innerWidth}`);
 
+/* Clone cards. */
+(function () {
+  const num_cards = images.children.length;
+  for (let i = 0; i < num_cards; i++) {
+    images.children[i].style.width = `${card_width}px`;
+    images.children[i].style.border = `1px solid black`;
+
+    var clone = images.children[i].cloneNode(true);
+    images.appendChild(clone);
+  }
+  const frames = document.getElementsByClassName("gallery-frame");
+  for (let i = 0; i < frames.length; i++) {
+    frames[i].style.width = `${card_width - 40}px`;
+  }
+  const paintings = document.getElementsByClassName("gallery-painting");
+  for (let i = 0; i < paintings.length; i++) {
+    paintings[i].style.width = `${paintings[i].offsetHeight}px`;
+    console.log(`paintings[i].offsetHeight: ${paintings[i].offsetHeight}`)
+  }
+})();
+
+// window.onresize = orderCards;
+
+/* Order cards. */
+(function () {
+  console.log(`num_cards_on_screen: ${num_cards_on_screen}`);
+  console.log(`card_width: ${card_width}`);
   for (let i = 0; i < images.children.length; i++) {
     images.children[i].style.transitionDuration = "1s";
-    images.children[i].style.left = `${i * card_width}%`;
 
-    if (i < middle_card_by_index) {
-      images.children[i].style.left = `${50 - counter_for_left * card_width}%`;
-      counter_for_left--;
-    } else if (i > middle_card_by_index) {
-      images.children[i].style.left = `${50 + counter_for_right * card_width}%`;
-      counter_for_right++;
+    if (i < images.children.length / 2 + num_cards_on_screen / 2) {
+      images.children[i].style.left = `${30 + i * card_width}px`;
     } else {
-      images.children[i].style.left = `50%`;
+      images.children[i].style.left = `${
+        30 - (images.children.length - i) * card_width
+      }px`;
     }
+
+    console.log(`card ${i}: ${images.children[i].style.left}`);
   }
-}
-order_cards();
+})();
 
 let last_positions = [];
 let scroll_in_progress = false;
