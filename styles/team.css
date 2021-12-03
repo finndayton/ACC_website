@@ -12,14 +12,20 @@
   align-items: center;
   text-align: center;
   flex-basis: 100%;
+  margin-bottom: 20px;
 }
 
-.team-member-image img {
-  border: 5px solid #58805a;
-  border-radius: 65px;
+.team-member {
+  border: 5px solid white;
   width: 90%;
-  overflow: hidden;
-  background-color: #58805a;
+  border-radius: 65px;
+  margin: auto;
+}
+
+.team-member:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
 }
 
 .team-member-name {
