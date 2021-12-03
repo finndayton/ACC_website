@@ -63,7 +63,7 @@ function order_cards() {
     images.children[first_index].offsetHeight; // Trigger a reflow, flushing the CSS changes
     images.children[first_index].classList.remove("notransition"); // Re-enable transitions
 
-    console.log(`card ${i}: ${images.children[i].style.left}`);
+    // console.log(`card ${i}: ${images.children[i].style.left}`);
   }
   const frames = document.getElementsByClassName("gallery-frame");
   for (let i = 0; i < frames.length; i++) {
@@ -72,7 +72,7 @@ function order_cards() {
   const paintings = document.getElementsByClassName("gallery-painting");
   for (let i = 0; i < paintings.length; i++) {
     paintings[i].style.width = `${paintings[i].offsetHeight}px`;
-    console.log(`paintings[i].offsetHeight: ${paintings[i].offsetHeight}`);
+    // console.log(`paintings[i].offsetHeight: ${paintings[i].offsetHeight}`);
   }
 }
 order_cards();
@@ -84,20 +84,20 @@ document.querySelector("#right").addEventListener("click", () => {
   scroll_in_progress = true;
 
   for (let i = 0; i < images.children.length; i++) {
-    console.log(
-      `before card ${i}: ${parseFloat(images.children[i].style.left)}`
-    );
+    // console.log(
+    //   `before card ${i}: ${parseFloat(images.children[i].style.left)}`
+    // );
     let new_left = parseFloat(images.children[i].style.left) - card_width;
     images.children[i].style.left = `${new_left}px`;
-    console.log(`after card ${i}: ${images.children[i].style.left}`);
+    // console.log(`after card ${i}: ${images.children[i].style.left}`);
   }
 
-  console.log(`first_index: ${first_index}`);
-  console.log(
-    `last_index: ${
-      (first_index - 1 + images.children.length) % images.children.length
-    }`
-  );
+  // console.log(`first_index: ${first_index}`);
+  // console.log(
+  //   `last_index: ${
+  //     (first_index - 1 + images.children.length) % images.children.length
+  //   }`
+  // );
 
   /* Wrap first element to back. */
   let new_left =
@@ -121,16 +121,16 @@ document.querySelector("#left").addEventListener("click", () => {
   scroll_in_progress = true;
 
   for (let i = 0; i < images.children.length; i++) {
-    console.log(
-      `before card ${i}: ${parseFloat(images.children[i].style.left)}`
-    );
+    // console.log(
+    //   `before card ${i}: ${parseFloat(images.children[i].style.left)}`
+    // );
     let new_left = parseFloat(images.children[i].style.left) + card_width;
     images.children[i].style.left = `${new_left}px`;
-    console.log(`after card ${i}: ${images.children[i].style.left}`);
+    // console.log(`after card ${i}: ${images.children[i].style.left}`);
   }
 
-  console.log(`first_index: ${first_index}`);
-  console.log(`last_index: ${last_index}`);
+  // console.log(`first_index: ${first_index}`);
+  // console.log(`last_index: ${last_index}`);
 
   /* Wrap last element to front. */
   let new_left =
