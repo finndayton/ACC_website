@@ -11,14 +11,12 @@ if (window.innerWidth > 900) num_cards_on_screen = 4;
 if (window.innerWidth > 1200) num_cards_on_screen = 5;
 
 const card_width = (window.innerWidth - 60) / num_cards_on_screen;
-console.log(`window.innerWidth: ${window.innerWidth}`);
 
-/* Clone cards. */
+/* Clone cards and compute sizes. */
 (function () {
   const num_cards = images.children.length;
   for (let i = 0; i < num_cards; i++) {
     images.children[i].style.width = `${card_width}px`;
-    images.children[i].style.border = `1px solid black`;
 
     var clone = images.children[i].cloneNode(true);
     images.appendChild(clone);
@@ -30,7 +28,7 @@ console.log(`window.innerWidth: ${window.innerWidth}`);
   const paintings = document.getElementsByClassName("gallery-painting");
   for (let i = 0; i < paintings.length; i++) {
     paintings[i].style.width = `${paintings[i].offsetHeight}px`;
-    console.log(`paintings[i].offsetHeight: ${paintings[i].offsetHeight}`)
+    console.log(`paintings[i].offsetHeight: ${paintings[i].offsetHeight}`);
   }
 })();
 
@@ -43,7 +41,7 @@ console.log(`window.innerWidth: ${window.innerWidth}`);
   for (let i = 0; i < images.children.length; i++) {
     images.children[i].style.transitionDuration = "1s";
 
-    if (i < images.children.length / 2 + num_cards_on_screen / 2) {
+    if (i < (images.children.length + num_cards_on_screen) / 2) {
       images.children[i].style.left = `${30 + i * card_width}px`;
     } else {
       images.children[i].style.left = `${
@@ -51,57 +49,52 @@ console.log(`window.innerWidth: ${window.innerWidth}`);
       }px`;
     }
 
+    images.children[i].style.transitionDuration = "0.5s";
     console.log(`card ${i}: ${images.children[i].style.left}`);
   }
 })();
 
 let last_positions = [];
+let first_index = Math.floor(
+  (images.children.length + num_cards_on_screen + 1) / 2
+);
+let last_index =
+  (first_index - 1 + images.children.length) % images.children.length;
 let scroll_in_progress = false;
 
-function handle_boundaries() {
-  if (last_positions[number_of_cards_by_index] >= 100) {
-    const beginning_of_deck = last_positions[0];
-    images.children[number_of_cards_by_index].style.left = `${
-      beginning_of_deck - card_width
-    }%`;
-    last_positions[number_of_cards_by_index] = beginning_of_deck - card_width;
-
-    images.insertBefore(
-      images.children[number_of_cards_by_index],
-      images.children[0]
-    );
-    last_positions.splice(0, 0, last_positions.pop());
-  }
-  if (last_positions[0] <= -10) {
-    const end_of_deck = last_positions[number_of_cards_by_index];
-    images.children[0].style.left = `${end_of_deck + card_width}%`;
-    last_positions[0] = end_of_deck + card_width;
-
-    images.append(images.children[0]);
-    last_positions.splice(number_of_cards_by_index, 0, last_positions.shift());
-  }
-}
-
 /* ************************* BUTTON NAVIGATION ************************* */
-
-for (let i = 0; i < images.children.length; i++) {
-  last_positions.push(parseFloat(images.children[i].style.left));
-}
 
 document.querySelector("#right").addEventListener("click", () => {
   if (scroll_in_progress) return;
   scroll_in_progress = true;
 
   for (let i = 0; i < images.children.length; i++) {
-    updated_position = last_positions[i] + card_width;
-    images.children[i].style.transitionDuration = "0.5s";
-    images.children[i].style.left = `${updated_position}%`;
-    last_positions[i] = updated_position;
+    console.log(
+      `before card ${i}: ${parseFloat(images.children[i].style.left)}`
+    );
+    let new_left = parseFloat(images.children[i].style.left) - card_width;
+    images.children[i].style.left = `${new_left}px`;
+    console.log(`after card ${i}: ${images.children[i].style.left}`);
   }
 
-  handle_boundaries();
+  console.log(`first_index: ${first_index}`);
+  console.log(
+    `last_index: ${
+      (first_index - 1 + images.children.length) % images.children.length
+    }`
+  );
 
-  for (let i = 0; i < images.children.length; i++) {}
+  /* Wrap first element to back. */
+  let new_left =
+    parseFloat(images.children[last_index].style.left) + card_width;
+
+  images.children[first_index].classList.add("notransition"); // Disable transitions
+  images.children[first_index].style.left = `${new_left}px`;
+  images.children[first_index].offsetHeight; // Trigger a reflow, flushing the CSS changes
+  images.children[first_index].classList.remove("notransition"); // Re-enable transitions
+
+  first_index = (first_index + 1) % images.children.length;
+  last_index = (last_index + 1) % images.children.length;
 
   setTimeout(() => {
     scroll_in_progress = false;
@@ -113,15 +106,30 @@ document.querySelector("#left").addEventListener("click", () => {
   scroll_in_progress = true;
 
   for (let i = 0; i < images.children.length; i++) {
-    updated_position = last_positions[i] - card_width;
-    images.children[i].style.transitionDuration = "0.5s";
-    images.children[i].style.left = `${updated_position}%`;
-    last_positions[i] = updated_position;
+    console.log(
+      `before card ${i}: ${parseFloat(images.children[i].style.left)}`
+    );
+    let new_left = parseFloat(images.children[i].style.left) + card_width;
+    images.children[i].style.left = `${new_left}px`;
+    console.log(`after card ${i}: ${images.children[i].style.left}`);
   }
 
-  handle_boundaries();
+  console.log(`first_index: ${first_index}`);
+  console.log(`last_index: ${last_index}`);
 
-  for (let i = 0; i < images.children.length; i++) {}
+  /* Wrap last element to front. */
+  let new_left =
+    parseFloat(images.children[first_index].style.left) - card_width;
+
+  images.children[last_index].classList.add("notransition"); // Disable transitions
+  images.children[last_index].style.left = `${new_left}px`;
+  images.children[last_index].offsetHeight; // Trigger a reflow, flushing the CSS changes
+  images.children[last_index].classList.remove("notransition"); // Re-enable transitions
+
+  first_index =
+    (first_index - 1 + images.children.length) % images.children.length;
+  last_index =
+    (last_index - 1 + images.children.length) % images.children.length;
 
   setTimeout(() => {
     scroll_in_progress = false;
