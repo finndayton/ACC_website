@@ -9,11 +9,96 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
 
+#home {
+  width: 100%;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  
+  background: linear-gradient(
+    124deg,
+    #ff2400,
+    #e81d1d,
+    #e8b71d,
+    #e3e81d,
+    #1de840,
+    #1ddde8,
+    #2b1de8,
+    #dd00f3,
+    #dd00f3
+  );
+  background-size: 1800% 1800%;
+
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-moz-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@-o-keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background-position: 0% 82%;
+  }
+  50% {
+    background-position: 100% 19%;
+  }
+  100% {
+    background-position: 0% 82%;
+  }
+}
+
+/* #home {
+  width: 100%;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   min-height: 100vh;
   margin: 0;
 
-  /* W3C */
+  /* W3C * /
   background: linear-gradient(
     top,
     #ff3232 0%,
@@ -25,7 +110,7 @@
     #ff3232 100%
   );
 
-  /* Firefox */
+  /* Firefox * /
   background: -moz-linear-gradient(
     top,
     #ff3232 0%,
@@ -37,7 +122,7 @@
     #ff3232 100%
   );
 
-  /* Chrome,Safari4+ */
+  /* Chrome,Safari4+ * /
   background: -webkit-gradient(
     linear,
     left top,
@@ -51,7 +136,7 @@
     color-stop(100%, #ff3232)
   );
 
-  /* Chrome10+,Safari5.1+ */
+  /* Chrome10+,Safari5.1+ * /
   background: -webkit-linear-gradient(
     top,
     #ff3232 0%,
@@ -67,7 +152,7 @@
   -moz-background-size: 1000%;
   -webkit-background-size: 1000%;
 
-  /* W3C */
+  /* W3C * /
   animation-name: fun-time-awesome;
   animation-duration: 40s;
   animation-timing-function: linear;
@@ -75,7 +160,7 @@
   animation-direction: alternate;
   animation-play-state: running;
 
-  /* Firefox: */
+  /* Firefox: * /
   -moz-animation-name: fun-time-awesome;
   -moz-animation-duration: 40s;
   -moz-animation-timing-function: linear;
@@ -83,7 +168,7 @@
   -moz-animation-direction: alternate;
   -moz-animation-play-state: running;
 
-  /* Chrome, Safari */
+  /* Chrome, Safari * /
   -webkit-animation-name: fun-time-awesome;
   -webkit-animation-duration: 40s;
   -webkit-animation-timing-function: linear;
@@ -91,6 +176,7 @@
   -webkit-animation-direction: alternate;
   -webkit-animation-play-state: running;
 }
+*/
 
 /* W3C */
 @keyframes fun-time-awesome {
