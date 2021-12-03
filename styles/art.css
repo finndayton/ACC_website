@@ -30,6 +30,11 @@
   top: 50%;
   display: flex;
   justify-content: center;
+  transition-duration: 0.5s;
+}
+
+#art .gallery-painting-container:hover {
+  opacity: 0.5;
 }
 
 #art .gallery-frame {
