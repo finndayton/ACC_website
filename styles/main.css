@@ -17,7 +17,7 @@ body {
   align-items: center;
   height: 50px;
   padding: 0 10px 0 10px;
-  z-index: 5;
+  z-index: 100;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
