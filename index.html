@@ -502,12 +502,13 @@
       faqs[i].addEventListener("click", function () {
         this.classList.toggle("active");
         this.children[1].classList.toggle("active");  // arrow
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-          // content.style.margin = "0";
+        var answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+          answer.style.padding = "0";
         } else {
-          content.style.maxHeight = content.scrollHeight + "px";
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          answer.style.padding = "0 0 10px 0"
         }
       });
     }
