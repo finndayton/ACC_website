@@ -12,15 +12,6 @@ if (window.innerWidth > 1200) num_cards_on_screen = 5;
 
 let card_width = (window.innerWidth - 60) / num_cards_on_screen;
 
-/* Clone cards and compute sizes. */
-(function () {
-  const num_cards = images.children.length;
-  for (let i = 0; i < num_cards; i++) {
-    var clone = images.children[i].cloneNode(true);
-    images.appendChild(clone);
-  }
-})();
-
 let last_positions = [];
 let first_index = Math.floor(
   (images.children.length + num_cards_on_screen + 1) / 2
@@ -159,5 +150,3 @@ document.querySelector("#left").addEventListener("click", () => {
     scroll_in_progress = false;
   });
 });
-
-/* ********************************************************************* */
