@@ -154,33 +154,6 @@
   font-size: large;
 }
 
-#buy-nft {
-  position: absolute;
-  right: 50px;
-  bottom: 100px;
-  background-color: black;
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 1;
-  transition: all 0.2s ease-in-out;
-}
-
-#buy-nft:hover {
-  scale: 1.1;
-}
-
-#buy-nft a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white;
-  font-weight: bold;
-  transition: letter-spacing 0.2s;
-}
-
-#buy-nft a:hover {
-  letter-spacing: 3px;
-}
-
 /* Scroll arrow animation from https://codepen.io/nxworld/pen/OyRrGy */
 
 #home::after {
