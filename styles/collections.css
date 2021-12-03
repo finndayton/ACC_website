@@ -7,6 +7,10 @@
   margin: 20px 0;
 }
 
+#collection-headers {
+  display: none;
+}
+
 .collection-item {
   display: flex;
   flex-direction: column;
@@ -17,6 +21,11 @@
 .collection-item img {
   height: 200px;
   width: auto;
+}
+
+.collection .fas {
+  font-size: 5rem;
+  transform: rotate(90deg);
 }
 
 .collection-colors {
@@ -43,5 +52,13 @@
 @media (min-width: 900px) {
   .collection {
     flex-direction: row;
+  }
+
+  .collection .fas {
+    transform: rotate(0deg);
+  }
+
+  #collection-headers {
+    display: flex;
   }
 }
