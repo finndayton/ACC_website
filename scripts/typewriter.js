@@ -1,16 +1,17 @@
 // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_typewriter
 var speed = 50;
 
-function type_writer(elementId, color, reverse = false) {
+function type_writer(elementId, color, container) {
   let old_html = document.getElementById(elementId).innerHTML;
+  let reverse = container.classList.contains("closing");
   if (!reverse && old_html.length < color.length) {
     document.getElementById(elementId).innerHTML += color.charAt(
       old_html.length
     );
-    setTimeout(() => type_writer(elementId, color), speed);
+    setTimeout(() => type_writer(elementId, color, container), speed);
   } else if (reverse && old_html.length > 0) {
     document.getElementById(elementId).innerHTML = old_html.slice(0, -1);
-    setTimeout(() => type_writer(elementId, color, (reverse = true)), speed);
+    setTimeout(() => type_writer(elementId, color, container), speed);
   }
 }
 
@@ -24,26 +25,53 @@ const rgba2hex = (rgba) =>
         .padStart(2, "0")
         .replace("NaN", "")
     )
-    .join("")}`;
+    .join("").toUpperCase()}`;
 
-const elements = document.querySelector("#art-carousel");
-
+    
 /* Add onclick functions. */
 (function () {
-  for (let i = 0; i < elements.children.length; i++) {
-    let elementId = elements.children[i].children[1].getAttribute("id");
+  /* Gallery. */
+  const gallery_elements = document.querySelector("#art-carousel");
+  for (let i = 0; i < gallery_elements.children.length; i++) {
+    let elementId = gallery_elements.children[i].children[1].getAttribute("id");
     let color = rgba2hex(
-      elements.children[i].children[0].children[1].style.backgroundColor
-    ).toUpperCase();
+      gallery_elements.children[i].children[0].children[1].style.backgroundColor
+    );
 
-    let container = elements.children[i].children[0];
+    let container = gallery_elements.children[i].children[0];
     container.addEventListener("click", () => {
-      if (container.classList.contains("active")) {
-        container.classList.remove("active");
-        type_writer(elementId, color, (reverse = true));
+      if (container.classList.contains("opening")) {
+        container.classList.remove("opening");
+        container.classList.add("closing");
+        type_writer(elementId, color, container);
       } else {
-        container.classList.add("active");
-        type_writer(elementId, color);
+        container.classList.remove("closing");
+        container.classList.add("opening");
+        type_writer(elementId, color, container);
+      }
+    });
+  }
+
+  // TODO: insert <p> elements in Javascript and have a counter for id#
+
+  /* Collections. */
+  const collections_elements = document.getElementsByClassName("collection-color-container");
+  for (let i = 0; i < collections_elements.length; i++) {
+    let elementId = collections_elements[i].children[1].getAttribute("id");
+    let color = rgba2hex(
+      collections_elements[i].children[0].style.backgroundColor
+    );
+
+    let container = collections_elements[i].children[0];
+    container.addEventListener("click", () => {
+      if (container.classList.contains("opening")) {
+        container.classList.remove("opening");
+        container.classList.add("closing");
+        type_writer(elementId, color, container);
+      } else {
+        container.classList.remove("closing");
+        container.classList.add("opening");
+        type_writer(elementId, color, container);
       }
     });
   }

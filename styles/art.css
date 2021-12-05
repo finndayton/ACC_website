@@ -55,10 +55,6 @@
   transition-duration: 0.5s;
 }
 
-#art .gallery-painting-subcontainer .animating {
-  pointer-events: none;
-}
-
 #art .gallery-painting-subcontainer:hover {
   opacity: 0.5;
   cursor: pointer;
@@ -68,7 +64,6 @@
   position: absolute;
   top: -30%;
   text-transform: uppercase;
-  /* display: none; */
 }
 
 .notransition {
