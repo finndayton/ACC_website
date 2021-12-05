@@ -23,9 +23,10 @@
   width: auto;
 }
 
-.collection .fas {
-  font-size: 5rem;
+.collection .collection-arrow {
+  width: 200px;
   transform: rotate(90deg);
+  margin: 100px 0;
 }
 
 .collection-colors {
@@ -54,8 +55,9 @@
     flex-direction: row;
   }
 
-  .collection .fas {
+  .collection .collection-arrow {
     transform: rotate(0deg);
+    margin: 0;
   }
 
   #collection-headers {
