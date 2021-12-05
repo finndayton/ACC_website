@@ -25,9 +25,9 @@ const rgba2hex = (rgba) =>
         .padStart(2, "0")
         .replace("NaN", "")
     )
-    .join("").toUpperCase()}`;
+    .join("")
+    .toUpperCase()}`;
 
-    
 /* Add onclick functions. */
 (function () {
   /* Gallery. */
@@ -55,7 +55,9 @@ const rgba2hex = (rgba) =>
   // TODO: insert <p> elements in Javascript and have a counter for id#
 
   /* Collections. */
-  const collections_elements = document.getElementsByClassName("collection-color-container");
+  const collections_elements = document.getElementsByClassName(
+    "collection-color-container"
+  );
   for (let i = 0; i < collections_elements.length; i++) {
     let elementId = collections_elements[i].children[1].getAttribute("id");
     let color = rgba2hex(

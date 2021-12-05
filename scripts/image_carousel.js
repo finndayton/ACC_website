@@ -48,10 +48,10 @@ function order_cards() {
 
   for (let index = 0; index < images.children.length; index++) {
     let i = (index + first_visible) % images.children.length;
-    
+
     images.children[i].style.width = `${card_width}px`;
     images.children[first_index].classList.add("notransition"); // Disable transitions
-    
+
     if (index < (images.children.length + num_cards_on_screen) / 2) {
       images.children[i].style.left = `${30 + index * card_width}px`;
     } else {
